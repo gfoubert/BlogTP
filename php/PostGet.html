@@ -1,0 +1,81 @@
+<!-- <!-- Methode POST/GET 
+<a href="http://localhost/Php
+
+<?php
+
+	print_r($_GET);
+	print_r($_GET);
+	
+	
+?>-->
+
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Traitement formulaire</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+</head>
+
+<body>
+<form action="#" method="GET">
+<p>
+	<label for="nom">Nom: </label><input type="text" name="nom" />
+	<br/>
+	<br/>
+	<label for="prenom">Prénom: </label><input type="text" name="prenom" />
+	<br/>
+	<br/>
+	<input type="checkbox" name="caseF" id="case" /> <label for="case" >Femme</label>
+	<br/>
+	<br/>
+	<input type="checkbox" name="caseH" id="case" /><label for="case">Homme</label>
+	<br/>
+	<br/>
+	<input type="submit" value="Valider" />
+	</p>
+	</form>
+	</body>
+	</html>
+	
+	<!-- traitement formulaire -->
+	
+<?php
+	
+	if (isset($_GET['nom']) AND isset($_GET['prenom]) AND isset($_GET['caseF']) OR isset($_GET['caseH']))
+	
+	{
+		echo '<strong>Je sais comment tu t\'appelles, tu t\'appelles : '.htmlspecialchars($_GET['prenom'])." ". htmlspecialchars($_GET['nom']);
+		
+			if(isset($_GET['caseF'])){
+			
+				echo ' tu es une femme';
+				
+		}else if(isset($_GET['caseH'])){
+		
+				echo ' tu es un homme';
+				
+				
+		}
+	
+	}else{// Il manque des paramètres, on averti le visiteur
+		
+		echo 'Il faut renseigner un nom et un prénom !';
+		
+	}
+	
+	echo '<br/>';
+	print_r($_GET);
+	echo '<br/>';
+	
+	unset($_GET['nom']);
+	unset($_GET['prenom']);
+	unset($_GET['caseF']);
+	unset($_GET['caseH'])}
+	
+	print_r($_GET);
+	$var=$_GET['nom'];
+	
+	
+	?>
